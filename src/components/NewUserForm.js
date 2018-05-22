@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import Nav from './Nav';
+import GlobalNavBar from './GlobalNavBar';
 import { Button, FormGroup, FormControl, ControlLabel } from "react-bootstrap";
 import { newUser } from '../utils/newUser-api';
 import "./NewUserForm.css"
@@ -47,7 +47,7 @@ class NewUserForm extends Component {
 	render() {
 		return (
       <div>
-        <Nav />
+        <GlobalNavBar />
         <h1>Let's get started...</h1>
         <div className="NewUserForm">
         <form onSubmit={this.handleSubmit}>

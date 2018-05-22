@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import Nav from './Nav';
+import GlobalNavBar from './GlobalNavBar';
 import { getProfilePicture } from '../utils/profileData-api';
 import "./Profile.css";
 
@@ -22,7 +22,7 @@ class Profile extends Component {
     var profPicUrl = this.state.profPicUrl;
 		return (
       <div>
-        <Nav />
+        <GlobalNavBar />
         <div className = "Container">
         	<h1> Kevin Johnson </h1>
         	<img id="profPic" src={profPicUrl} alt="Profile"/>
