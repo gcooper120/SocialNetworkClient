@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {Nav, Navbar, NavItem, FormGroup, FormControl, Button} from "react-bootstrap";
+import {Nav, Navbar, NavItem, FormGroup, FormControl, Button, Glyphicon} from "react-bootstrap";
 import './Nav.css';
 
 
@@ -18,6 +18,10 @@ class myNav extends Component {
     });
   }
 
+  handleSubmit = event => {
+    alert("Coming soon");
+  }
+
   render() {
     return (
     <Navbar fluid>
@@ -25,13 +29,19 @@ class myNav extends Component {
         <NavItem eventKey={1} href="/">
         Social Network
         </NavItem>
-        <NavItem eventKey={1} className="material-icons">priority_high</NavItem>
+        <NavItem>
+          <Glyphicon glyph="list-alt" />
+        </NavItem>
       </Nav>
         <Navbar.Form pullLeft>
-          <FormGroup>
-            <FormControl type="text" placeholder="Search" />
-          </FormGroup>{' '}
-            <Button type="submit">Submit</Button>
+          <form onSubmit={this.handleSubmit}>
+            <FormGroup>
+              <FormControl type="text" placeholder="Search" />
+            </FormGroup>{' '}
+              <Button type="submit">
+                <Glyphicon glyph="search"/>
+              </Button>
+          </form>
         </Navbar.Form>
       <Nav pullRight>
         <NavItem eventKey={1} href="/">
