@@ -1,8 +1,9 @@
 import axios from 'axios';
 
-export {login};
+export {newUser};
 
-function login(data) {
-	const url = '/api/login';
+function newUser(data) {
+	const url = '/api/newUser';
+	console.log(data)
 	return axios.post(url, data).then(response => response.data);
 }

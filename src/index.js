@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import Login from './components/Login'
 import Profile from './components/Profile'
+import NewUserForm from './components/NewUserForm'
 
 import { Switch, BrowserRouter, Route } from 'react-router-dom';
 
@@ -11,6 +12,7 @@ const Root = () => {
 	    <div className="container">
 	    	<Switch>
 	        <Route exact path="/" component={Login}/>
+	        <Route exact path="/register" component={NewUserForm}/>
 	        <Route exact path="/profile" component={Profile}/>
 	        <Route exact path="*" component={Login}/>
 	       </Switch>

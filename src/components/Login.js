@@ -7,6 +7,7 @@ import "./Login.css"
 class Login extends Component {
 	constructor(props) {
 		super(props);
+    this.newUser = this.newUser.bind(this);
 		this.state = {
 			email: "",
 			password: "",
@@ -24,23 +25,27 @@ class Login extends Component {
 
 	handleSubmit = event => {
     //Send these to api, do verification, do next thing.
-    console.log(event.target.email.value)
-    console.log(event.target.password.value)
     var data = {
       "email": event.target.email.value,
       "password": event.target.password.value
     }
-    login(data.email, data.password).then(e => {
+    login(data).then(e => {
     console.log(e);
     });
 		event.preventDefault();
 	}
+
+  newUser = event => {
+    event.preventDefault()
+    window.location.assign('/register')
+  }
 
 
 	render() {
 		return (
       <div>
         <Nav />
+        <h1>Welcome Home!</h1>
         <div className="Login">
         <form onSubmit={this.handleSubmit}>
           <FormGroup controlId="email" bsSize="large">
@@ -67,6 +72,14 @@ class Login extends Component {
             type="submit"
           >
             Login
+          </Button>
+          <Button
+            onClick= {this.newUser}
+            block
+            bsSize="large"
+            type="button"
+          >
+            New User?
           </Button>
         </form>
       </div>
