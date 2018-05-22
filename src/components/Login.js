@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import Nav from './Nav';
+import GlobalNavBar from './GlobalNavBar';
 import { Button, FormGroup, FormControl, ControlLabel } from "react-bootstrap";
 import { login } from '../utils/authentication-api';
 import "./Login.css"
@@ -44,7 +44,7 @@ class Login extends Component {
 	render() {
 		return (
       <div>
-        <Nav />
+        <GlobalNavBar />
         <h1>Welcome Home!</h1>
         <div className="Login">
         <form onSubmit={this.handleSubmit}>
