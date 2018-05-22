@@ -3,7 +3,7 @@ import {Nav, Navbar, NavItem, FormGroup, FormControl, Button, Glyphicon} from "r
 import './Nav.css';
 
 
-class myNav extends Component {
+class GlobalNavBar extends Component {
 
   constructor(props) {
     super(props);
@@ -75,4 +75,4 @@ class myNav extends Component {
   }
 }
 
-export default myNav;
+export default GlobalNavBar;

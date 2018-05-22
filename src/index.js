@@ -1,7 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import Login from './components/Login'
-import Profile from './components/Profile'
+import AboutMe from './components/AboutMe'
+import ProfilePage from './components/ProfilePage'
 import NewUserForm from './components/NewUserForm'
 
 import { Switch, BrowserRouter, Route } from 'react-router-dom';
@@ -12,8 +13,9 @@ const Root = () => {
 	    <div className="container">
 	    	<Switch>
 	        <Route exact path="/" component={Login}/>
+	        <Route exact path="/AboutMe" component={AboutMe}/>
+	        <Route exact path="/profile" component={ProfilePage}/>
 	        <Route exact path="/register" component={NewUserForm}/>
-	        <Route exact path="/profile" component={Profile}/>
 	        <Route exact path="*" component={Login}/>
 	       </Switch>
 	    </div>
