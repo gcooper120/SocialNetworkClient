@@ -30,15 +30,19 @@ class NewUserForm extends Component {
 	}
 
 	 handleSubmit = event => {
-    console.log(event.target.email.value)
-    console.log(event.target.password.value)
+
     var data = {
       "name": event.target.name.value,
       "email": event.target.email.value,
       "password": event.target.password.value
     }
     newUser(data).then(e => {
-    console.log(e);
+    if (e.status === 200) {
+      console.log("To the profile!");
+      this.props.history.push('/profile')
+    } else {
+      console.log("Something went wrong");
+    }
     });
     event.preventDefault();
   }
