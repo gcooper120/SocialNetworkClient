@@ -1,8 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Login from './components/Login'
-import Profile from './components/Profile'
-import NewUserForm from './components/NewUserForm'
+import Login from './components/Login';
+import Profile from './components/Profile';
+import NewUserForm from './components/NewUserForm';
 
 import { Switch, BrowserRouter, Route } from 'react-router-dom';
 

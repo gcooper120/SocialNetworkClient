@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import GlobalNavBar from './GlobalNavBar';
 import { getProfilePicture } from '../utils/profileData-api';
+import { isLoggedIn } from '../utils/authentication-api.js';
 import "./Profile.css";
 
 
@@ -12,6 +13,14 @@ class Profile extends Component {
     };
   }
 
+  componentWillMount() {
+    var self = this
+    isLoggedIn().then(function(e) {
+      if (e === false) {
+        self.props.history.push('/')
+      }
+    });
+  }
   componentDidMount() {
     getProfilePicture().then(results => {
       this.setState({profPicUrl: results});
