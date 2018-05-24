@@ -2,6 +2,10 @@ import React, { Component } from "react";
 import { getProfileData } from '../utils/profileData-api.js'
 import {Grid, Row, Col, Image} from "react-bootstrap";
 
+/*  This component is responsible for the about me section of a profile.
+ *  There are two parts to the about me section, the picture and information.
+ *  The picture is rendered on the left, name, city, state and DOB are rendered on the right.
+ */
 class AboutMe extends Component {
   constructor(props) {
     super(props);
@@ -15,7 +19,7 @@ class AboutMe extends Component {
       birthday: "",
     };
   }
-
+//When the component mounts, we call the profileData api and get all of the necessary data from the database for a given user.
   componentDidMount() {
     getProfileData().then(results => {
       this.setState({name: results.name});
@@ -29,6 +33,7 @@ class AboutMe extends Component {
     });
   }
 
+//The component is rendered as a grid with two rows.
   render() {
     return (
         <Grid>

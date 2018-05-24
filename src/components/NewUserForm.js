@@ -4,6 +4,7 @@ import { Button, FormGroup, FormControl, ControlLabel } from "react-bootstrap";
 import { newUser } from '../utils/newUser-api';
 import "./NewUserForm.css"
 
+// This component is the register new user page.
 class NewUserForm extends Component {
 	constructor(props) {
 		super(props);
@@ -15,6 +16,9 @@ class NewUserForm extends Component {
       password2: ""
 		};
 	}
+
+  // Checks various parts of the form. Noticibly that the two email fields have the same value,
+  // and the two passwords have the same value.
 	validateForm() {
 		return this.state.name.length > 0 &&
     this.state.email.length > 0 && 
@@ -23,14 +27,16 @@ class NewUserForm extends Component {
     (this.state.password === this.state.password2);
 	}
 
+  //  Updates state on changes to the form
 	handleChange = event => {
 		this.setState({
 			[event.target.id]: event.target.value
 		});
 	}
 
+  //  On form submission, we package everything as JSON and use the newUser function from newUser-api.
+  //  newUser makes an API call to the server, which creates the new user in the database and starts a session
 	 handleSubmit = event => {
-
     var data = {
       "name": event.target.name.value,
       "email": event.target.email.value,
@@ -46,7 +52,7 @@ class NewUserForm extends Component {
     event.preventDefault();
   }
 
-
+  //  Renders the component.
 	render() {
 		return (
       <div>

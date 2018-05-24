@@ -3,6 +3,7 @@ import {Nav, Navbar, NavItem, FormGroup, FormControl, Button, Glyphicon} from "r
 import './Nav.css';
 
 
+/* This component is the navigation bar at the top of every page.*/
 class GlobalNavBar extends Component {
 
   constructor(props) {
@@ -11,17 +12,19 @@ class GlobalNavBar extends Component {
       search: "",
     };
   }
-
+  //When something is entered in the search bar, the search value is updated in the state.
   handleChange = event => {
     this.setState({
       [event.target.id]: event.target.value
     });
   }
 
+  //When the search button is clicked, this will do something.
   handleSubmit = event => {
     alert("Coming soon");
   }
 
+  //Renders the nav bar
   render() {
     return (
     <Navbar fluid>
@@ -52,25 +55,6 @@ class GlobalNavBar extends Component {
         </NavItem>
       </Nav>
     </Navbar>
-
-    //   <nav className="navbar navbar-default">
-    //     <div className="navbar-header">
-    //       <Link className="navbar-brand" to="/">Social Network</Link>
-    //     </div>
-    //     <div className="navbar-header">
-    //       <i className="material-icons navbar-text">priority_high</i>
-    //     </div>
-    //     <div>
-    //       <form class="form-inline">
-    //         <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search"></input>
-    //         <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-    //       </form>
-    //     </div>
-    //     <div class="">
-    //       <button className="btn btn-info log">Settings</button>
-    //       <button className="btn btn-danger log">Log out </button>
-    //     </div>
-    //   </nav>
     );
   }
 }

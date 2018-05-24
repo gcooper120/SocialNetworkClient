@@ -4,6 +4,7 @@ import { Button, FormGroup, FormControl, ControlLabel } from "react-bootstrap";
 import { login } from '../utils/authentication-api';
 import "./Login.css"
 
+/*  This component handles the log in page.*/
 class Login extends Component {
 	constructor(props) {
 		super(props);
@@ -13,39 +14,44 @@ class Login extends Component {
 			password: "",
 		};
 	}
+  //  Ensures that the email and password fields are not empty.
+  //  In the future this will perform more validation tests.
 	validateForm() {
 		return this.state.email.length > 0 && this.state.password.length > 0;
 	}
 
+  // Changes the state of the component whenever text is entered
 	handleChange = event => {
 		this.setState({
 			[event.target.id]: event.target.value
 		});
 	}
-
+  //  When the form is submitted, the data is put in a json object and send as an argument to the login function imported from authentication-api.
 	handleSubmit = event => {
-    //Send these to api, do verification, do next thing.
     var data = {
       "email": event.target.email.value,
       "password": event.target.password.value
     }
+    //On an unsuccessful login, the program will run the first function, and the second on failure.
     login(data).then(e => {
-      console.log(e);
+    //  The login function should return a status of 200 on successful login. We then redirect to the /profile page
     if (e.status === 200) {
       this.props.history.push('/profile')
     } else {
-      console.log("Something went wrong");
+      console.log("Something went wrong..." + e);
     }
-    });
+    }, e=> {console.log("Failed to login");});
     event.preventDefault();
   }
 
+  // This is the button handler for the create nw user button.
   newUser = event => {
     event.preventDefault()
     window.location.assign('/register')
   }
 
 
+  //  Renders the component
 	render() {
 		return (
       <div>
