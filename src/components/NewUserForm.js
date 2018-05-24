@@ -38,7 +38,6 @@ class NewUserForm extends Component {
     }
     newUser(data).then(e => {
     if (e.status === 200) {
-      console.log("To the profile!");
       this.props.history.push('/profile')
     } else {
       console.log("Something went wrong");

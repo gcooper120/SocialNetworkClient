@@ -30,10 +30,15 @@ class Login extends Component {
       "password": event.target.password.value
     }
     login(data).then(e => {
-    console.log(e);
+      console.log(e);
+    if (e.status === 200) {
+      this.props.history.push('/profile')
+    } else {
+      console.log("Something went wrong");
+    }
     });
-		event.preventDefault();
-	}
+    event.preventDefault();
+  }
 
   newUser = event => {
     event.preventDefault()
