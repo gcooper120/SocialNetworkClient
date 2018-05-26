@@ -3,8 +3,8 @@ import GlobalNavBar from './GlobalNavBar';
 import AboutMe from './AboutMe';
 import { isLoggedIn } from '../utils/authentication-api.js';
 
-//	This component is pretty much just a wrapper for the profile.
-//	Presently it just renders the nav bar and about me section, but in the future will render the whole profile
+//  This component is pretty much just a wrapper for the profile.
+//  Presently it just renders the nav bar and about me section, but in the future will render the whole profile
 class ProfilePage extends Component {
 
   componentWillMount() {
@@ -17,14 +17,14 @@ class ProfilePage extends Component {
     });
   }
 
-	render() {
-		return (
-			<div>
-				<GlobalNavBar />
-				<AboutMe />
-			</div>
-			);
-	}
+  render() {
+    return (
+      <div>
+        <GlobalNavBar />
+        <AboutMe />
+      </div>
+      );
+  }
 
 }
 export default ProfilePage

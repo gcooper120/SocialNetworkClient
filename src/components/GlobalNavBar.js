@@ -29,7 +29,7 @@ class GlobalNavBar extends Component {
     return (
     <Navbar fluid>
       <Nav pullLeft>
-        <NavItem eventKey={1} href="/">
+        <NavItem eventKey={1} href="/profile">
         Social Network
         </NavItem>
         <NavItem>
@@ -47,10 +47,10 @@ class GlobalNavBar extends Component {
           </form>
         </Navbar.Form>
       <Nav pullRight>
-        <NavItem eventKey={1} href="/">
+        <NavItem eventKey={2} href="/AccountSettings">
           Account Settings
         </NavItem>
-        <NavItem eventKey={1} href="/">
+        <NavItem eventKey={3} href="/">
         Sign in
         </NavItem>
       </Nav>
